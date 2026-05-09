@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+:root {
+	color: #e5edf5;
+	background: #091012;
+	font-family:
+		Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+		"Segoe UI", sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+button,
+input {
+	font: inherit;
+}
+
+button {
+	align-items: center;
+	background: #d9952f;
+	border: 1px solid #d9952f;
+	border-radius: 8px;
+	color: #091012;
+	cursor: pointer;
+	display: inline-flex;
+	font-weight: 700;
+	gap: 0.4rem;
+	justify-content: center;
+	min-height: 38px;
+	padding: 0 0.9rem;
+}
+
+button.secondary {
+	background: transparent;
+	color: #d9952f;
+}
+
+button:disabled {
+	opacity: 0.55;
+}
+
+input {
+	background: #081516;
+	border: 1px solid #2e474b;
+	border-radius: 8px;
+	color: #e5edf5;
+	min-height: 40px;
+	padding: 0 0.75rem;
+}
+
+.center {
+	display: grid;
+	min-height: 100vh;
+	place-items: center;
+}
+
+.admin {
+	margin: 0 auto;
+	max-width: 1180px;
+	padding: 1.25rem;
+}
+
+.topbar,
+.identity,
+.row {
+	align-items: center;
+	display: flex;
+}
+
+.topbar {
+	justify-content: space-between;
+	margin-bottom: 1rem;
+}
+
+.topbar p,
+.muted,
+.row span,
+.loginCard p {
+	color: #8ea1a9;
+}
+
+.topbar p,
+.topbar h1,
+.card h2,
+.loginCard h1 {
+	margin: 0;
+}
+
+.identity {
+	gap: 0.75rem;
+}
+
+.grid {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: 0.8fr 1.2fr;
+}
+
+.card {
+	background: linear-gradient(135deg, rgb(12 25 26 / 96%), rgb(13 19 20 / 96%));
+	border: 1px solid #24383b;
+	border-radius: 10px;
+	box-shadow: 0 22px 80px rgb(0 0 0 / 28%);
+	display: grid;
+	gap: 1rem;
+	padding: 1.2rem;
+}
+
+.loginCard {
+	max-width: 430px;
+	width: calc(100vw - 2rem);
+}
+
+.loginCard label {
+	display: grid;
+	gap: 0.35rem;
+}
+
+.hero {
+	align-content: start;
+	grid-row: span 2;
+}
+
+.hero svg {
+	color: #d9952f;
+}
+
+.list {
+	display: grid;
+	gap: 0.7rem;
+}
+
+.row {
+	border-top: 1px solid #233537;
+	gap: 0.8rem;
+	justify-content: space-between;
+	padding-top: 0.7rem;
+}
+
+.row > div {
+	min-width: 0;
+}
+
+.row strong,
+.row span {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.row.compact {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.badge {
+	border: 1px solid #3a5d63;
+	border-radius: 999px;
+	color: #a8f5d3;
+	font-size: 0.75rem;
+	padding: 0.25rem 0.55rem;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.badge.danger,
+.badge.failed {
+	border-color: #7f3838;
+	color: #ff9d9d;
+}
+
+.badge.succeeded {
+	border-color: #2c6d4f;
+	color: #a8f5d3;
+}
+
+.error {
+	color: #ff9d9d;
+}
+
+@media (max-width: 820px) {
+	.grid {
+		grid-template-columns: 1fr;
+	}
+
+	.topbar {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+}

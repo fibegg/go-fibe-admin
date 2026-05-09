@@ -1,0 +1,18 @@
+# syntax=docker/dockerfile:1.7
+
+FROM node:24.11.1-alpine
+
+ENV NPM_CONFIG_AUDIT=false \
+    NPM_CONFIG_FUND=false
+
+WORKDIR /workspace
+
+COPY --link package.json package-lock.json ./
+RUN --mount=type=cache,target=/root/.npm npm ci --prefer-offline --no-audit --no-fund \
+    && cp -a node_modules /opt/node_modules \
+    && rm -rf node_modules
+
+COPY --link . .
+
+EXPOSE 5173
+CMD ["npm", "run", "dev"]
